@@ -1,0 +1,644 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    height: 98vh;
+    background-color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.side-bar {
+    width: 150px;
+    height: 95vh;
+    background-color: #262626;
+    transition: 1s ease;
+    padding: 5px 20px 0px 10px;
+    margin: 0;
+    z-index: 1;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.search-bar-container.content-visible {
+    display: block;
+}
+
+.search-bar-container {
+    width: 280px;
+    z-index: 1;
+    border-radius: 10px;
+    position: relative;
+    bottom: 80px;
+    left: 150px;
+    padding: 10px 5px;
+    background-color: rgba(61, 61, 61);
+    padding-bottom: 30px;
+    box-shadow: 3px 3px 2px #000;
+    z-index: 2;
+    display: none;
+    pointer-events: auto;
+}
+
+.search-bar-container input {
+    height: 25px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    width: 190px;
+    border-radius: 7px;
+    border: none;
+    outline: 1px solid #000;
+    color: #fff;
+}
+
+.search-bar-container button {
+    border-radius: 6px;
+    height: 37px;
+    width: 70px;
+    background-color: #034889;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.search-bar-container button:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #000;
+}
+
+.search-bar-container h2 {
+    font-size: 15px;
+    margin: 10px;
+    width: 180px;
+    color: #fff;
+}
+
+.search-bar-container :hover {
+    box-sizing: 3px 3px 2px #000;
+}
+
+
+/*Buttons*/
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+.btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.add-btn {
+    background-color: #034889;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #000;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+
+/*The new position of the side bar (when closed)*/
+
+.reduce {
+    transition: 1s ease;
+    width: 30px;
+    padding-right: 20px;
+    transition: all 1s ease;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*The arrow to open and close the side bar*/
+
+.expand {
+    color: #fff;
+    font-size: 20px;
+    background-color: #3d3d3d;
+    border: solid 1px #fff;
+    border-radius: 50%;
+    padding: 8px 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.expand:hover {
+    cursor: pointer;
+    transition: 1s;
+    background-color: #454545;
+}
+
+.expand i {
+    font-size: 20px;
+    position: relative;
+    bottom: 4px;
+    color: #fff;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*The position of the arrow with respect to the side bar*/
+
+.default-position {
+    transition: 1s ease;
+    position: absolute;
+    top: 25px;
+    left: 180px;
+}
+
+.new-position {
+    position: absolute;
+    transition: 1s ease;
+    top: 25px;
+    left: 60px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*User Info  Div*/
+
+.user-info {
+    margin-top: 60px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.user-info h1 {
+    margin-left: 20px;
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    bottom: 10px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*The box containing the icon and the content*/
+
+.box-around {
+    width: 80%;
+    height: 25px;
+    border-radius: 7px;
+    padding-right: 10px;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.box-around:hover {
+    cursor: pointer;
+    background-color: #3d3d3d;
+}
+
+.box-around i {
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.box-around h1 {
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    left: 30px;
+    bottom: 35px;
+    margin-left: 20px;
+    width: 80px;
+}
+
+.content-invisible {
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.content-visible {
+    transition: 4s ease;
+    opacity: 1;
+}
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+/* Default styles for main content */
+
+.main-section {
+    position: absolute;
+    top: -1%;
+    background-color: #262626;
+    border-radius: 20px;
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    transition: all 1s ease;
+    padding-right: 40px;
+    width: 960px;
+}
+
+.default-main-section {
+    transition: all 1s ease;
+    margin-left: 220px;
+    width: 960px;
+}
+
+.reduced-main-section {
+    transition: all 1s ease;
+    margin-left: 100px;
+    width: 1080px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+.size-expand {
+    width: 260px;
+}
+
+.heading textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.heading textarea::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+.btn::after {
+    content: "Edit";
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 10px;
+    font-size: 11px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 50px;
+    right: 6px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.add-btn:after {
+    content: "Edit";
+}
+
+.delete-btn:after {
+    content: "Delete";
+}
+
+.save-btn::after {
+    content: "Save";
+}
+
+.save-btn:hover::after {
+    opacity: 1;
+}
+
+.delete-btn:hover::after {
+    opacity: 1;
+}
+
+.add-btn:hover::after {
+    opacity: 1;
+}
+
+.new-note button:after {
+    content: "Add";
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background-color: #000;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 70px;
+    right: 6px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.new-note button:hover::after {
+    opacity: 1;
+}
+
+.new-note button {
+    padding-top: 10px;
+}
+
+.trash-bin-button:after {
+    content: "TrashBin";
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background-color: #000;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 94px;
+    right: 17px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.trash-bin-button:hover::after {
+    opacity: 1;
+}
+
+.todo-list-container {
+    height: 86vh;
+    margin-right: 10px;
+}
+
+.todo-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list-header h1 {
+    color: #fff;
+}
+
+.todo-list-header button {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+th,
+td {
+    border-top: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    width: 160px;
+}
+
+th {
+    border-top: none;
+    background-color: #3d3d3d;
+    color: #fff;
+    font-weight: 900;
+}
+
+td.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 520px;
+}
+
+.new-description-width {
+    transition: all ease 1s;
+    min-width: 600px;
+}
+
+td.title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 50px;
+}
+
+tr:hover {
+    background-color: #3d3d3d;
+}
+
+button {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.create-new-task-form {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    width: 300px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+#close-button {
+    margin-left: 280px;
+}
+
+.create-new-task-form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #444;
+    color: #fff;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #555;
+}
+
+textarea.form-control {
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    min-width: 295px;
+    background-color: #444;
+    color: #fff;
+    resize: none;
+    overflow-y: auto;
+    height: 80px;
+}
+
+textarea.form-control::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+textarea.form-control::-webkit-scrollbar-thumb {
+    background-color: rgb(71, 71, 71);
+}
+
+textarea.form-control::-webkit-scrollbar-track {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+.create-new-task-form.show-form {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.create-new-task-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.add-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+td button {
+    font-size: 16px;
+}
+
+.action-delete {
+    margin-left: 16px;
+    background-color: red;
+    padding: 7px 8px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+.action-delete:hover {
+    background-color: rgb(255, 100, 100);
+}
+
+.complete {
+    background-color: rgb(5, 231, 5);
+    padding: 7px 8px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+.complete:hover {
+    background-color: rgb(70, 255, 70);
+}
+
+.complete-task {
+    text-decoration: line-through;
+}
+
+.description {
+    font-size: 12px;
+}
+
+
+/* Styles for scrollbar in textarea */
+
+.todo-list-body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+/* Styles for scrollbar track */
+
+.todo-list-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Styles for scrollbar thumb */
+
+.todo-list-body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+.todo-list-body {
+    overflow-y: auto;
+    max-height: 450px;
+    overflow-x: hidden;
+}

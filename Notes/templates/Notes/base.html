@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block header %}{% endblock header %}
+  </head>
+  <body>
+    <!-- Preloader
+    <div class="preloader">
+      <div class="loader"></div>
+    </div> 
+    -->
+    <!--Home-->
+    <section id="home">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}" style="color: #fff">NoteVerse</a>
+          <button
+            class="navbar-toggler btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse navbar-content"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item hover-effect">
+                <a
+                  class="link nav-link pages active"
+                  href="{% url 'home' %}"
+                  style="color: #fff; margin-right: 10px"
+                  id="home-link"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown hover-effect">
+                <a
+                  class="link nav-link pages dropdown-toggle"
+                  href="{% url 'features' %}"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="color: #fff; margin-right: 10px"
+                  id="feature-link"
+                >
+                  Features
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'features' %}#search">Search</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'features' %}#todo-list">ToDo List</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'features' %}#sticky-notes"
+                      >Sticky Notes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'features' %}#notes">Notes</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'features' %}#calendar">Calendar</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item hover-effect">
+                <a
+                  class="link nav-link pages"
+                  href="{% url 'why-us' %}"
+                  style="color: #fff; margin-right: 10px"
+                  id="why-us--link"
+                  >Why us?</a
+                >
+              </li>
+              <li class="nav-item hover-effect">
+                <a
+                  class="link nav-link pages"
+                  href="#"
+                  style="color: #fff; margin-right: 10px"
+                  id="pricing-link"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+            <a href="{% url 'account_login' %}" class="pages">Login</a>
+            <a href="{% url 'account_signup' %}" class="pages">Signup</a>
+            {% if user.is_authenticated %}
+            <i>{{user.username}}</i>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+      {% block content %}{% endblock content %}
+    </body>
+    </html>

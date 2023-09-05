@@ -1,0 +1,73 @@
+{% load static %}
+{% load widget_tweaks %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'Notes/login.css' %}" />
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Login Page</title>
+</head>
+<style>
+  .errors label{
+    font-size: 11px;
+    color: red;
+    position: relative;
+    bottom: 9px;
+  }
+
+</style>
+
+<body>
+    <div class="container">
+        <form id="login" method="post">
+          {% csrf_token %}
+            <h1>Login</h1>
+            {% render_field form.username type="text" placeholder="Username" id="test_username" %}
+            {% for error in form.username.errors %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{ error }}</label>
+            </div>
+            {% endfor %}
+            {% render_field form.password type="password" placeholder="Password" id="test_password" %}
+            {% for error in form.password.errors %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{ error }}</label>
+            </div>
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{ error }}</label>
+            </div>
+            {% endfor %}
+            <input type="checkbox" id="show" /><label>Show Password</label>
+
+            <a class="forgot" href="{% url 'forgot-password' %}">Forgot Password?</a>
+            <button class="btn" style="margin-top: 20px" id="test_toogle">
+          Login
+        </button>
+
+            <div class="signup-location">
+                <h2>Do you have an account? <a href="{% url 'account_signup' %}">Signup</a></h2>
+            </div>
+            <div class="or"><span></span>or<span></span></div>
+            <br /><br />
+        <button class="btn facebook"><a href="{% provider_login_url "facebook" method="oauth2" %}">
+          <i class="fa-brands fa-facebook" style="margin-left: 15px"></i> Login
+          with Facebook
+        </a></button>
+       <button class="btn google"><a href="{% provider_login_url 'google' %}">
+          <i class="fa-brands fa-google-plus-g" style="margin-left: 10px"></i>
+          Login with Google
+        </a></button>
+        </form>
+    </div>
+</body>
+<script src="{% static 'Notes/show-password.js' %}">
+</script>
+</html>

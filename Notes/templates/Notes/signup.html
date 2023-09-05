@@ -1,0 +1,83 @@
+{% load static %}
+{% load widget_tweaks %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'Notes/signup.css' %}" />
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Signup Page</title>
+</head>
+<style>
+  .errors label{
+    font-size: 11px;
+    color: red;
+    position: relative;
+    bottom: 9px;
+  }
+</style>
+<body>
+    <div class="container">
+        <form id="login" method="post">
+          {% csrf_token %}
+            <h1>Signup</h1>
+            {% render_field form.username type="text" placeholder="Username" %}
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.tags == "username error" %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{message}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% render_field form.email type="email" placeholder="Email" %}
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.tags == "email error" %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{message}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% render_field form.password1 type="password" placeholder="Password" %}
+            {% render_field form.password2 type="password" placeholder="Confirm Password" %}
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.tags == "password2 error" %}
+            <div class="errors">
+            <label><i class="fa-sharp fa-solid fa-circle-exclamation"></i>{{message}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            <input type="checkbox" id="show" /><label>Show Password</label>
+            <button class="btn" style="margin-top: 20px">Signup</button>
+            <div class="signup-location">
+                <h2>
+                    Already have an Account?
+                    <a href="{% url 'account_login' %}">Login</a>
+                </h2>
+            </div>
+            <div class="or"><span></span>or<span></span></div>
+            <br /><br />
+          <button class="btn facebook"><a href="{% provider_login_url "facebook" method="oauth2" %}">
+          <i class="fa-brands fa-facebook" style="margin-left: 15px"></i> Signup
+          with Facebook
+          </a></button>
+        <button class="btn google"><a href="{% provider_login_url 'google' %}">
+          <i class="fa-brands fa-google-plus-g" style="margin-left: 10px"></i>
+          Signup with Google
+        <a/></button>
+        </form>
+    </div>
+</body>
+<script src="{% static 'Notes/show-password-signup.js' %}">
+</script>
+</html>

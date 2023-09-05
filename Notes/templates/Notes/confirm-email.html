@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'Notes/confirmation.css' %}" />
+    <title>Email Confirmation</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Email Confirmation</h1>
+        <p>
+          Thank you for signing up! We have sent a confirmation email to the
+          address you provided.
+        </p>
+        <p>
+          Please check your inbox and click on the confirmation link to activate
+          your account.
+        </p>
+        <a class="btn" href="{% url 'request-new-link-from-email' %}">Resend Email</a>
+      </div>
+    </div>
+  </body>
+</html>

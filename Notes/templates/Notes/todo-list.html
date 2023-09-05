@@ -1,0 +1,92 @@
+{% extends 'Notes/sidebar.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!--CSS file link-->
+    <link id="theme-style" rel="stylesheet" href="{% static 'Notes/todo-light.css' %}" />
+
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!--jQuery Link-->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Todo List</title>
+{% endblock head %}
+    
+    
+{% block body %}
+<!--Main Content-->
+<div class="main-section default-main-section">
+    <div class="create-new-task-form">
+        <form method="post">
+            {% csrf_token %}
+            <button id="close-button">x</button>
+            <h2>Create New Task</h2>
+            <div class="form-group">
+                <label for="title">Title</label>
+                {% render_field form.title type="text" id="title" class="form-control" placeholder="Enter Title" %}
+                {% for error in form.title.errors %}
+                <h6>{{error}}</h6>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                {% render_field form.description id="description" class="form-control" rows="4" placeholder="Enter description" %}
+            </div>
+            <button type="submit" class="add-button">Add Task</button>
+        </form>
+    </div>
+    <div class="todo-list-container">
+        <div class="todo-list-header">
+            <h1>Todo List</h1><button id="create-new-task-button">+ Create New Task</button>
+        </div>
+        <div class="todo-list-body">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                {% for Todo in Todos %}
+                    <tr>
+                        <td>{{Todo.title}}</td>
+                        <td class="description">{{Todo.description}}</td>
+                        <td>{{Todo.status}}</td>
+                        <td><button class="complete"><i class="fa fa-check"></i></button><button class="action-delete"><i class="bx bxs-trash"></i></button></td>
+                    </tr>    
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+<script>
+    $(document).ready(() => {
+        $("#theme-toggle").click(() => {
+            $("body").toggleClass("dark");
+            if ($("body").hasClass("dark")) {
+                $("#theme-style").attr("href", "{% static 'Notes/todo-dark.css' %}");
+            } else {
+                $("#theme-style").attr("href", "{% static 'Notes/todo-light.css' %}");
+            }
+        });
+    });
+    let toggleSearchBarContainer = () => {
+        const searchBarContainer = document.querySelector('.search-bar-container');
+        searchBarContainer.classList.toggle('content-visible');
+    };
+    document.querySelector('#search').addEventListener('click', () => {
+        toggleSearchBarContainer();
+
+    });
+</script>
+<script src="{% static 'Notes/todo.js' %}"></script>
+{% endblock body %}

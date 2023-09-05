@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+    <button class="default-position expand">
+        <i class="fa fa-angle-left"></i>
+    </button>
+    <nav class="side-bar mobile-width">
+        <div class="user-info">
+            <img src="/Todo Website/Images/Schedule Management.png" />
+            <h1 class="name">{{request.user}}</h1>
+        </div>
+        <div class="search box-around search-box-around">
+            <a href="#" id="search">
+                <i class="bx bx-search-alt hovered-text"></i>
+                <h1 class="icon-content">Search</h1>
+                <div class="search-bar-container invisible">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" required>Search</button>
+                    <h2>Searching</h2>
+                </div>
+            </a>
+        </div>
+        <div class="add box-around">
+            <a href="#">
+                <i class="bx bx-plus hovered-text"></i>
+                <h1 class="icon-content">Add</h1>
+            </a>
+        </div>
+        <div class="note box-around">
+            <a href="{% url 'notes' %}">
+                <i class="bx bx-note hovered-text"></i>
+                <h1 class="icon-content">Note</h1>
+            </a>
+        </div>
+        <div class="task box-around">
+            <a href="#">
+                <i class="bx bx-task hovered-text"></i>
+                <h1 class="icon-content">Task</h1>
+            </a>
+        </div>
+        <div class="todo box-around">
+            <a href="{% url 'todo-list' %}">
+                <i class="bx bx-list-ul hovered-text"> </i>
+                <h1 class="icon-content">Todo List</h1>
+            </a>
+        </div>
+        <div class="calendar box-around">
+            <a href="#">
+                <i class="bx bx-calendar hovered-text"></i>
+                <h1 class="icon-content">Calendar</h1>
+            </a>
+        </div>
+        <div class="trash box-around">
+            <a href="#">
+                <i class="bx bxs-trash hovered-text"></i>
+                <h1 class="icon-content">Trash</h1>
+            </a>
+        </div>
+        <div class="setting box-around" style="margin-top: 50px">
+            <a href="#">
+                <i class="bx bxs-cog hovered-text"></i>
+                <h1 class="icon-content">Setting</h1>
+            </a>
+        </div>
+        <div class="theme box-around" id="theme-toggle">
+            <a href="#">
+                <i class="bx bxs-sun hovered-text"></i>
+                <h1 class="icon-content">Theme</h1>
+            </a>
+        </div>
+        <div class="logout box-around">
+            <a href="{% url 'account_logout' %}">
+            <i class="bx bx-log-out hovered-text"></i>
+            <h1 class="icon-content">Logout</h1>
+            </a>
+        </div>
+    </nav>
+    {% block body %}{% endblock body %}
+</body>
+</html>

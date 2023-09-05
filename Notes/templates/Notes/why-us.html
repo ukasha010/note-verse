@@ -1,0 +1,184 @@
+{% extends 'Notes/base.html' %}
+{% load static %}
+{% block header %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap CSS cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!--Bootstrap Javascript cdn-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="{% static 'Notes/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'Notes/style.css' %}" />
+    <title>Why us</title>
+  {% endblock header %}
+  {% block content %}
+    <section id="why-us">
+      <section>
+        <div class="container">
+          <div class="row" id="user-friendly">
+            <div class="col-lg-4">
+              <img src="{% static 'Notes/User-Friendly.png' %}" class="image" />
+            </div>
+            <div class="col-lg-6" style="margin-left: 30px">
+              <h1>User-Friendly Interface</h1>
+              <h2>
+                Our website offers a seamless and intuitive user interface,
+                ensuring a smooth and enjoyable experience for all users. With a
+                clean and organized design, you can easily navigate through the
+                features and maximize your productivity.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="task-management">
+            <div class="col-lg-6">
+              <h1>Efficient Task Management</h1>
+              <h2>
+                Our Todo List feature allows you to effectively manage your
+                tasks and responsibilities. With the ability to add, edit, and
+                check off items, you can stay on top of your to-do list and
+                ensure that nothing gets overlooked.
+              </h2>
+            </div>
+            <div class="col-lg-4">
+              <img
+                src="{% static 'Notes/Task-Management.png' %}"
+                class="image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="visual-reminder">
+            <div class="col-lg-4">
+              <img
+                src="{% static 'Notes/Visual-Reminder.png' %}"
+                class="image"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h1>Visual Reminders</h1>
+              <h2>
+                The Sticky Notes feature provides a convenient way to jot down
+                quick notes and reminders. With customizable virtual sticky
+                notes, you can keep important information within sight, ensuring
+                that you never miss a crucial detail.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="schedule-management">
+            <div class="col-lg-6">
+              <h1>Seamless Schedule Management</h1>
+              <h2>
+                Our Calendar feature helps you stay organized and never miss an
+                important event. With an intuitive interface, you can
+                effortlessly manage appointments, meetings, and events, ensuring
+                that your schedule is well-coordinated.
+              </h2>
+            </div>
+            <div class="col-lg-4">
+              <img
+                src="/Todo Website/Images/Schedule Management.png"
+                class="image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="note-making">
+            <div class="col-lg-4">
+              <img src="{% static 'Notes/Note-Taking.png' %}" class="image" />
+            </div>
+            <div class="col-lg-6" style="margin-left: 50px">
+              <h1>Streamlined Note-Taking</h1>
+              <h2>
+                Capture your thoughts and ideas with ease using the Notes
+                feature. With structured note-taking capabilities, you can
+                create and organize your notes in a way that suits your
+                preferences, allowing for easy reference whenever needed.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="search">
+            <div class="col-lg-4">
+              <img src="{% static 'Notes/Searching.png' %}" class="image" />
+            </div>
+            <div class="col-lg-6">
+              <h1>Powerful Search Functionality</h1>
+              <h2>
+                Our website offers a robust search feature that allows you to
+                quickly find the information you need. With the ability to
+                search across your notes, tasks, and calendar events, you can
+                save time and effortlessly locate specific details.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1>Enhanced Productivity</h1>
+              <h2>
+                With our comprehensive set of features, we provide you with the
+                tools you need to enhance your productivity. From task
+                management to note-taking and schedule organization, our website
+                empowers you to accomplish more and stay focused on what matters
+                most.
+              </h2>
+            </div>
+            <div class="col-lg-4">
+              <img
+                src="{% static 'Notes/Increase-Productivity.png' %}"
+                class="image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row" id="security">
+            <div class="col-lg-4">
+              <img src="{% static 'Notes/Security.png' %}" class="image" />
+            </div>
+            <div class="col-lg-6" style="margin-left: 50px">
+              <h1>Secure and Reliable</h1>
+              <h2>
+                We prioritize the security and reliability of your data. Rest
+                assured that your information is protected and backed up,
+                providing you with peace of mind while using our website.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    {% endblock content %}

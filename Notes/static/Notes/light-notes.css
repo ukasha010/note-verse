@@ -1,0 +1,676 @@
+/* Importing Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+/* Basic styles for the body */
+
+body {
+    font-family: Poppins;
+    /* Set the font */
+    margin: 0;
+    padding: 0;
+    height: 98vh;
+    background-color: #fff;
+    /* Set the background color */
+    transition: background-color 0s, color 0s;
+}
+
+
+/* Remove underlines from links */
+
+a {
+    text-decoration: none;
+}
+
+
+/* Style for links on hover */
+
+a:hover {
+    cursor: pointer;
+}
+
+
+/* Styles for the side bar */
+
+.side-bar {
+    width: 150px;
+    height: 95vh;
+    background-color: #e1e1e1;
+    transition: 1s ease;
+    padding: 5px 20px 0px 10px;
+    margin: 0;
+    z-index: 1;
+    border-radius: 20px;
+    margin: 20px;
+    color: #000;
+}
+
+
+/* Toggle visibility of search bar */
+
+.search-bar-container.content-visible {
+    display: block;
+}
+
+
+/* Styles for the search bar container */
+
+.search-bar-container {
+    width: 280px;
+    z-index: 1;
+    border-radius: 10px;
+    position: relative;
+    bottom: 80px;
+    left: 150px;
+    padding: 10px 5px;
+    background-color: rgba(236, 236, 236);
+    padding-bottom: 30px;
+    box-shadow: 3px 3px 2px #000;
+    z-index: 2;
+    display: none;
+    color: #000;
+}
+
+
+/* Styles for the search input */
+
+.search-bar-container input {
+    height: 25px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #000;
+    padding: 5px;
+    width: 190px;
+    border-radius: 7px;
+    border: none;
+    outline: 1px solid #000;
+    color: #000;
+}
+
+
+/* Styles for the search button */
+
+.search-bar-container button {
+    border-radius: 6px;
+    height: 37px;
+    width: 70px;
+    background-color: #034889;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+/* Hover styles for the search button */
+
+.search-bar-container button:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #000;
+}
+
+
+/* Styles for the search bar title */
+
+.search-bar-container h2 {
+    font-size: 15px;
+    margin: 10px;
+    width: 180px;
+    color: #000;
+}
+
+
+/* Hover styles for the search bar container */
+
+.search-bar-container :hover {
+    box-sizing: 3px 3px 2px #000;
+}
+
+
+/* Styles for various buttons */
+
+.btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+}
+
+
+/* Styles for button links */
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}
+
+
+/* Styles for delete button */
+
+.delete-btn {
+    background-color: red;
+}
+
+
+/* Styles for add button */
+
+.add-btn {
+    background-color: #034889;
+}
+
+
+/* Hover styles for buttons */
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #000;
+}
+
+
+/* Styles for reducing side bar width */
+
+.reduce {
+    transition: 1s ease, background-color 0s;
+    width: 30px;
+    padding-right: 20px;
+    transition: all 1s ease;
+}
+
+
+/* Styles for the arrow to expand side bar */
+
+.expand {
+    color: #000;
+    font-size: 20px;
+    background-color: #ececec;
+    border: solid 1px #fff;
+    border-radius: 50%;
+    padding: 8px 5px;
+    height: 30px;
+    width: 30px;
+}
+
+
+/* Hover styles for the expand arrow */
+
+.expand:hover {
+    cursor: pointer;
+    transition: 1s;
+    background-color: #d4d4d4;
+}
+
+
+/* Styles for the arrow icon in the expand button */
+
+.expand i {
+    font-size: 20px;
+    position: relative;
+    bottom: 4px;
+    color: #000;
+}
+
+
+/* Transition and position styles for the arrow */
+
+.default-position {
+    transition: 1s ease;
+    position: absolute;
+    top: 25px;
+    left: 180px;
+}
+
+
+/* Transition and position styles for the arrow in a new position */
+
+.new-position {
+    position: absolute;
+    transition: 1s ease;
+    top: 25px;
+    left: 60px;
+}
+
+
+/* Styles for the user info container */
+
+.user-info {
+    margin-top: 60px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+/* Styles for user image */
+
+.user-info img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+
+/* Styles for user name */
+
+.user-info h1 {
+    margin-left: 20px;
+    font-size: 15px;
+    color: #000;
+    position: relative;
+    bottom: 10px;
+}
+
+
+/* Styles for the box container */
+
+.box-around {
+    width: 80%;
+    height: 25px;
+    border-radius: 7px;
+    padding-right: 10px;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+
+/* Hover styles for the box container */
+
+.box-around:hover {
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+
+/* Styles for the icon in the box container */
+
+.box-around i {
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    color: #000;
+    margin-right: 10px;
+}
+
+
+/* Styles for the heading in the box container */
+
+.box-around h1 {
+    font-size: 15px;
+    color: #000;
+    position: relative;
+    left: 30px;
+    bottom: 35px;
+    margin-left: 20px;
+    width: 80px;
+}
+
+
+/* Styles for content visibility */
+
+.content-invisible {
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+
+/* Styles for visible content */
+
+.content-visible {
+    transition: 4s ease;
+    opacity: 1;
+}
+
+
+/* Default styles for main content */
+
+.main-section {
+    position: absolute;
+    top: -1%;
+    background-color: #e1e1e1;
+    border-radius: 20px;
+    margin-top: 28px;
+    display: block;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    transition: all 1s ease;
+}
+
+
+/* Styles for default main section */
+
+.default-main-section {
+    transition: all 1s ease;
+    margin-left: 220px;
+    width: 78%;
+}
+
+
+/* Styles for reduced main section */
+
+.reduced-main-section {
+    transition: all 1s ease;
+    margin-left: 100px;
+    width: 87%;
+}
+
+
+/* Styles for expanding the size */
+
+.size-expand {
+    width: 260px;
+}
+
+
+/* Styles for customizing the textarea scrollbar */
+
+.heading textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+/* Styles for textarea scrollbar thumb */
+
+.heading textarea::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
+/* Styles for the all-notes container */
+
+.all-notes {
+    margin-right: 10px;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    overflow-y: auto;
+    height: 550px;
+    overflow: hidden;
+}
+
+
+/* Styles for customizing the scrollbar */
+
+.all-notes::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+/* Styles for scrollbar thumb */
+
+.all-notes::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
+/* Styles for the h1 heading in all-notes */
+
+.all-notes h1 {
+    color: #000;
+    text-align: center;
+}
+
+
+/* Styles for note links */
+
+.note-link {
+    width: 220px;
+    color: #000;
+    height: 80px;
+    background-color: #ececec;
+    border-radius: 10px;
+    margin: 10px;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Hover styles for note links */
+
+.note-link:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 3px #000;
+}
+
+
+/* Styles for note link text */
+
+.note-link a {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* Styles for new note template */
+
+.new-note-template {
+    background-color: #ececec;
+    border-radius: 10px;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+
+/* Styles for h1 in new note template */
+
+.new-note-template h1 {
+    color: #000;
+    margin-left: 20px;
+}
+
+
+/* Styles for buttons in new note template */
+
+.new-note-template button {
+    position: relative;
+    bottom: 68px;
+    left: 360px;
+    font-size: 16px;
+    background-color: #034889;
+    color: #000;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+
+/* Hover styles for buttons in new note template */
+
+.new-note-template button:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 3px #000;
+}
+
+
+/* Styles for delete button in new note template */
+
+#delete-button {
+    background-color: red;
+}
+
+
+/* Styles for input in title section */
+
+#title input {
+    margin-left: 10px;
+    font-size: 20px;
+    width: 90%;
+    height: 50px;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 20px;
+}
+
+
+/* Focus styles for input in title section */
+
+#title input:focus {
+    outline: none;
+}
+
+
+/* Styles for textarea in content section */
+
+#content textarea {
+    margin-left: 10px;
+    font-size: 13px;
+    width: 95%;
+    height: 250px;
+    color: #000;
+    background-color: transparent;
+    resize: none;
+    border: none;
+}
+
+
+/* Focus styles for textarea in content section */
+
+#content textarea:focus {
+    outline: none;
+}
+
+
+/* Styles for scrollbar in textarea */
+
+#content textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+/* Styles for scrollbar track */
+
+#content textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Styles for scrollbar thumb */
+
+#content textarea::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+
+/* Styles for delete button */
+
+#delete-button {
+    margin-left: 10px;
+}
+
+
+/* Edit button appearance on hover */
+
+.btn::after {
+    content: "Edit";
+    height: 40px;
+    width: 100px;
+    color: #000;
+    background-color: #000;
+    padding: 5px 10px;
+    font-size: 11px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 50px;
+    right: 6px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+/* Adjust padding for new-note button */
+
+.new-note-template button {
+    padding-top: 10px;
+    color: #fff;
+}
+
+
+/* Hover styles for trash bin button after click */
+
+.trash-bin-button:hover::after {
+    opacity: 1;
+}
+
+
+/* Adjust padding for trash bin button */
+
+.trash-bin-button {
+    padding-top: 15px;
+}
+
+
+/* Styles for the all-notes container */
+
+.all-notes {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    overflow-y: auto;
+    max-height: 550px;
+    border-radius: 10px;
+}
+
+.note-link {
+    width: 95%;
+    color: #000;
+    height: 80px;
+    background-color: #ececec;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-note-template {
+    width: 70%;
+    height: 80vh;
+}
+
+.main-section {
+    display: flex;
+}
+
+
+/* Styles for scrollbar in textarea */
+
+.all-notes::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+/* Styles for scrollbar track */
+
+.all-notes::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Styles for scrollbar thumb */
+
+.all-notes::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+.note-link {
+    min-height: 80px;
+}
